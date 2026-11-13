@@ -595,7 +595,9 @@
         - not rhel9cis_nginx_server
         - not rhel9cis_nginx_mask
       ansible.builtin.package:
-        name: nginx
+        name: 
+          - nginx
+          - nginx-plus
         state: absent
 
     - name: "2.1.18 | PATCH | Ensure web server services are not in use | Mask httpd service"
